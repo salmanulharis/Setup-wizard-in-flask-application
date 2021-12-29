@@ -1,0 +1,284 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+	<div class="d-flex flex-column align-items-center pt-5">
+		<h1 style="color: red;">Hi {{ user }}</h1>
+	</div>
+
+	<div id="1" class="setup_wiz hide">
+		<form id="form" class="form">
+			{{ addressform.hidden_tag() }}
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4">{{ legend }}</legend>
+				<div class="form-group">
+					{{ addressform.fullname.label(class="form-control-label") }}
+
+					{% if addressform.fullname.errors %}
+						{{ addressform.fullname(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in addressform.fullname.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ addressform.fullname(class="form-control form-control-lg") }}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ addressform.phone.label(class="form-control-label") }}
+
+					{% if addressform.phone.errors %}
+						{{ addressform.phone(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in addressform.phone.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ addressform.phone(class="form-control form-control-lg") }}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ addressform.city.label(class="form-control-label") }}
+
+					{% if addressform.city.errors %}
+						{{ addressform.city(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in addressform.city.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ addressform.city(class="form-control form-control-lg") }}
+					{% endif %}
+				</div>
+			</fieldset>
+			<div class="form-group">
+				{{ addressform.submit(class="btn btn-outline-info") }}
+			</div>
+		</form>
+	</div>
+	<div id="2" class="setup_wiz hide">
+		<form id="form1" class="form">
+			{{ jobform.hidden_tag() }}
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4">{{ legend }}</legend>
+				<div class="form-group">
+					{{ jobform.jobname.label(class="form-control-label") }}
+
+					{% if jobform.jobname.errors %}
+						{{ jobform.jobname(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in jobform.jobname.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ jobform.jobname(class="form-control form-control-lg") }}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ jobform.experience.label(class="form-control-label") }}
+
+					{% if jobform.experience.errors %}
+						{{ jobform.experience(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in jobform.experience.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ jobform.experience(class="form-control form-control-lg") }}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ jobform.company.label(class="form-control-label") }}
+
+					{% if jobform.company.errors %}
+						{{ jobform.company(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in jobform.company.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ jobform.company(class="form-control form-control-lg") }}
+					{% endif %}
+				</div>
+			</fieldset>
+			<div class="form-group">
+				{{ jobform.submit(class="btn btn-outline-info") }}
+				<button class="back_button btn btn-outline-danger">Back</button>
+			</div>
+		</form>
+	</div>
+	<div id="3" class="setup_wiz hide">
+		<form id="form2" class="form">
+			{{ productform.hidden_tag() }}
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4">{{ legend }}</legend>
+				<div class="form-group">
+					{{ productform.product.label(class="form-control-label") }}
+
+					{% if productform.product.errors %}
+						{{ productform.product(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in productform.product.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ productform.product(class="form-control form-control-lg") }}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ productform.price.label(class="form-control-label") }}
+
+					{% if productform.price.errors %}
+						{{ productform.price(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in productform.price.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ productform.price(class="form-control form-control-lg") }}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ productform.validity.label(class="form-control-label") }}
+
+					{% if productform.validity.errors %}
+						{{ productform.validity(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in productform.validity.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ productform.validity(class="form-control form-control-lg") }}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ productform.description.label(class="form-control-label") }}
+
+					{% if productform.description.errors %}
+						{{ productform.description(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in productform.description.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ productform.description(class="form-control form-control-lg") }}
+					{% endif %}
+				</div>
+			</fieldset>
+			<div class="form-group">
+				{{ productform.submit(class="btn btn-outline-info") }}
+				<button class="back_button btn btn-outline-danger">Back</button>
+			</div>
+		</form>
+	</div>
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			if ({{ new_user }}){
+				$("#1").removeClass('hide');
+			}
+		});
+
+		$(".back_button").click(function(event){
+			event.preventDefault()
+			parentDiv = $(this).parent().parent().parent();
+			pageNum = parseInt(parentDiv.attr('id'));
+			parentDiv.addClass('hide');
+			$("#" + (pageNum - 1)).removeClass('hide');
+		})
+
+		$("#form").submit(function(event){
+			event.preventDefault()
+			$.ajax({
+			    type: "GET",
+			    url: "/save_address",
+			    data:{
+			      fullname:$(this).find( "#fullname" ).val(),
+			      phone:$(this).find( "#phone" ).val(),
+			      city:$(this).find( "#city" ).val(),
+			    },
+			    success: function(response){
+			      console.log(response)
+			    }
+			});
+			nextPage(this)
+		})
+		$("#form1").submit(function(event){
+			event.preventDefault()
+			$.ajax({
+			    type: "GET",
+			    url: "/save_job",
+			    data:{
+			      jobname:$(this).find( "#jobname" ).val(),
+			      experience:$(this).find( "#experience" ).val(),
+			      company:$(this).find( "#company" ).val(),
+			    },
+			    success: function(response){
+			      console.log(response)
+			    }
+			});
+			nextPage(this)
+		})
+		$("#form2").submit(function(event){
+			event.preventDefault()
+			$.ajax({
+			    type: "GET",
+			    url: "/save_product",
+			    data:{
+			      product:$(this).find( "#product" ).val(),
+			      price:$(this).find( "#price" ).val(),
+			      validity:$(this).find( "#validity" ).val(),
+			      description:$(this).find( "#description" ).val(),
+			    },
+			    success: function(response){
+			      console.log(response)
+			    }
+			});
+			nextPage(this)
+		})
+
+		function nextPage(element) {
+			parentDiv = $(element).parent();
+			pageNum = parseInt(parentDiv.attr('id'));
+			parentDiv.addClass('hide');
+			$("#" + (pageNum + 1)).removeClass('hide');
+		}
+
+		function prevPage(element) {
+			parentDiv = $(element).parent().parent();
+			pageNum = parseInt(parentDiv.attr('id'));
+			console.log(pageNum)
+			// parentDiv.addClass('hide');
+			// $("#" + (pageNum - 1)).removeClass('hide');
+		}
+
+		// function firstFunction(element) {
+		// 	pageNum = $(element).find( "#name" ).val()
+		// 	console.log(pageNum)
+		// }
+
+		// function secondFunction(element) {
+		// 	pageNum = $(element).find( "#age" ).val()
+		// 	console.log(pageNum)
+		// }
+
+		// function thirdFunction(element) {
+		// 	pageNum = $(element).find( "#place" ).val()
+		// 	console.log(pageNum)
+		// }
+
+
+	</script>
+
+{% endblock content %}

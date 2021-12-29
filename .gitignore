@@ -1,0 +1,17 @@
+appenv/
+appenv/
+.env
+.env/
+migrations/versions
+migrations
+migrations/
+migration_tenant/versions
+migration_tenant/alembic.ini
+migration_tenant/README
+migration_tenant/script.py.mako
+**/__pycache__/
+*/__pycache__/
+*.pyc
+*.db
+# app/static
+# app/static/images
